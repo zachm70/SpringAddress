@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert new Address</title>
+</head>
+<body>
+<form th:object="${newAddress}" th:action="@{/update/{id}(id=${newAddress.id})}" method=POST>
+		Name: <input name="name" size="20" th:field="*{name}"> <br />
+		Address: <input name="address" size="20" th:field="*{address}"> <br />
+		City: <input name="city" size="20" th:field="*{city}"> <br />
+		ZipCode: <input name="zip" size="20" th:field="*{zip}"> <br />
+		<input name="submit" type="submit" value="submit" />
+	</form>
+	<a href="viewAll">View all Addresses</a>
+</body>
+</html>

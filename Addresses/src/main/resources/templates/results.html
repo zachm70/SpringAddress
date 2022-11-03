@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Results</title>
+</head>
+<body>
+<form>
+	<table>
+		<tr th:each="currentAddress : ${addresses}">
+			<td th:text="${currentAddress.id}" />
+			<td th:text="${currentAddress.name}" />
+			<td th:text="${currentAddress.address}" />
+			<td th:text="${currentAddress.city}" />
+			<td th:text="${currentAddress.zip}" />
+			<td><a th:href="@{/edit/{id}(id=${currentAddress.id})}">Edit</a></td>
+			<td><a th:href="@{/delete/{id}(id=${currentAddress.id})}">Delete</a></td>
+		</tr>
+	</table>
+</form>
+<a href="../inputAddress">Add new Address</a>
+</body>
+</html>
